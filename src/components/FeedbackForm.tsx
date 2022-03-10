@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import FeedbackContext from '../context/FeedbackContext';
 import { Feedback } from '../modules/Feedback';
 import RatingSelect from './RatingSelect';
@@ -50,7 +49,6 @@ const FeedbackForm: React.FC = () => {
             if (feedbackEdit.edit === true) {
                 updataFeedback(feedbackEdit.item.id!.toString(), newFeedback);
             } else {
-                newFeedback.id = uuidv4();
                 addFeedback(newFeedback);
             }
 
