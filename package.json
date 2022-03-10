@@ -1,31 +1,36 @@
 {
-    "name": "my-feedback",
-    "private": true,
-    "version": "0.0.0",
-    "scripts": {
-        "dev": "concurrently \"npm run server\" vite",
-        "build": "tsc && vite build",
-        "preview": "vite preview",
-        "server": "json-server --watch db.json --port 5000"
-    },
-    "dependencies": {
-        "concurrently": "^7.0.0",
-        "framer-motion": "^4.1.17",
-        "json-server": "^0.17.0",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-icons": "^4.3.1",
-        "react-router-dom": "^6.2.2",
-        "styled-components": "^5.3.3",
-        "uuid": "^8.3.2"
-    },
-    "devDependencies": {
-        "@types/react": "^17.0.33",
-        "@types/react-dom": "^17.0.10",
-        "@types/styled-components": "^5.1.24",
-        "@types/uuid": "^8.3.4",
-        "@vitejs/plugin-react": "^1.0.7",
-        "typescript": "^4.5.4",
-        "vite": "^2.8.0"
-    }
+  "name": "my-feedback",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "startdev": "tsc-watch --onSuccess \"node server/dist/index.js\"",
+    "start": "node server/dist/index",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run startdev\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heuzin/my-feedback.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heuzin/my-feedback/issues"
+  },
+  "homepage": "https://github.com/heuzin/my-feedback#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "json-server": "^0.17.0"
+  },
+  "devDependencies": {
+    "@types/json-server": "^0.14.4",
+    "@types/node": "^17.0.21",
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "tsc-watch": "^4.6.1",
+    "typescript": "^4.6.2"
+  }
 }
