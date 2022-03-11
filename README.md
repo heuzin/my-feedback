@@ -11,7 +11,7 @@ Check the demo hosted on https://my-feedback-client.vercel.app/.
 First clone this repository.
 
 ```bash
-$ git clone https://github.com/heuzin/my-feedback-client.git
+$ git clone https://github.com/heuzin/my-feedback.git
 ```
 
 Install dependencies. Make sure you already have [`nodejs`](https://nodejs.org/en/) & [`npm`](https://www.npmjs.com/)
